@@ -1,0 +1,333 @@
+/* base */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(192, 162, 31);
+}
+
+img {
+    display: block;
+}
+
+.d-blok{
+    display: block !important;
+}
+
+.d-flex{
+    display: flex !important;
+}
+
+.d-none{
+    display: none !important;
+}
+
+.section{
+    border-top: 2px solid #ccc;
+    margin-top: 24px;
+    width: 80%;
+    padding: 24px 46px;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #2d2013;
+    color: #fff
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading {
+    font-size: 52px;
+    font-weight: 700;
+    margin: 32px;
+}
+
+.search-wrapper {
+    margin-bottom: 24px;
+}
+
+.search-wrapper input{
+    font-size: 16px;
+    height: 46px;
+    width: 30vw;
+    position: relative;
+    padding-left: 12px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.search-wrapper i {
+    font-size: 18px;
+    line-height: 48px;
+}
+
+.search-box {
+    display: flex;
+    position: relative;
+}
+
+.btn{
+    height: 46px;
+    width: 46px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0;
+}
+
+.random-btn {
+    margin-left: 12px;
+}
+
+/* Search result */
+
+.section h2{
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.meals-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+}
+
+.meal-item {
+    width: 22%;
+    min-width: 200px;
+    margin-bottom: 46px;
+    position: relative;
+    overflow: hidden;
+}
+
+.meal-item.loading::before{
+    display: block;
+    content: '';
+    position: absolute;
+    inset: 0 0;
+    background: rgb(151, 151, 151);
+    z-index: 10;
+}
+
+.meal-item.loading::after{
+    display: block;
+    content: '';
+    position: absolute;
+    inset: 0 0;
+    background-image: linear-gradient(90deg, rgb(151, 151, 151), rgb(248, 248, 248) 50%, rgb(151, 151, 151));
+    z-index: 10;
+    animation: Skeleton 2s linear infinite;
+}
+
+.meal-overlay {
+    position: absolute;
+    inset: 0 0;
+    background: #0007;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    transition: opacity .3s ease;
+    opacity: 0;
+    padding: 4px;
+}
+
+.meal-overlay:hover {
+    opacity: 1;
+}
+
+.meal-img{
+    display: block;
+    border: 4px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Detail page */
+
+.detail-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.detail-meal {
+    width: 36%;
+    padding: 24px;
+}
+
+.detail-heading {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 32px;
+}
+
+.detail-img {
+    width: 100%;
+    border: 4px solid #ccc;
+    border-radius: 8px;
+}
+
+.detail-ingredients {
+    padding: 24px;
+    width: 50%;
+}
+
+.detail-info {
+    list-style: none;
+    width: 100%;
+    padding: 24px 0 0 12px;
+    font-size: 24px;
+    line-height: 48px;
+}
+
+.ingredients-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 4%;
+    overflow-y: auto;
+    height: 40rem;
+    scrollbar-color: #6969dd #e0e0e0;
+    scrollbar-width: thin;
+}
+
+/* width */
+.ingredients-wrapper::-webkit-scrollbar {
+    width: 20px;
+}
+  
+  /* Track */
+.ingredients-wrapper::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+
+/* Handle */
+.ingredients-wrapper::-webkit-scrollbar-thumb {
+background: #b47639; 
+border-radius: 10px;
+}
+
+/* Handle on hover */
+.ingredients-wrapper::-webkit-scrollbar-thumb:hover {
+background: #b30000; 
+}
+
+.ingredients-wrapper::-webkit-scrollbar {
+    width: 10px;
+}
+
+.ingredients-wrapper::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+.ingredients-item {
+    text-align: center;
+    font-size: 24px;
+    width: 30%;
+    margin-bottom: 12px;
+}
+
+.ingredients-link {
+    width: 100%;
+}
+
+.ingredients-img {
+    width: 100%;
+}
+
+.meal-instruction {
+    font-size: 24px;
+    width: 60%;
+    text-align: justify;
+    padding: 64px 0;
+}
+
+.instruction-video {
+    margin: 64px 0;
+}
+
+
+/* Loading */
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #fff;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+  }
+
+
+@keyframes Skeleton{
+    0%{
+        transform: translateX(-50%);
+    }
+
+    50%{
+        transform: translateX(50%);
+    }
+
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100%{
+        opacity: 100%;
+        transform: scale(1);
+    }
+}

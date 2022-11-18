@@ -263,7 +263,9 @@ background: #b30000;
 }
 
 .instruction-video {
+    display: flex;
     margin: 64px 0;
+    flex-direction: column;
 }
 
 
@@ -329,5 +331,68 @@ background: #b30000;
     100%{
         opacity: 100%;
         transform: scale(1);
+    }
+}
+
+
+@media screen and (max-width: 1260px){
+    .meals-list {
+        gap: 5%;
+    }
+
+    .meal-item {
+        width: 30%;
+    }
+
+    .ingredients-wrapper {
+        height: 30rem;
+    }
+
+    .meal-video {
+        height: 430px !important;
+    }
+}
+
+@media screen and (max-width: 950px){
+    .meal-item {
+        width: 45%;
+    }
+
+    .search-wrapper input {
+        width: 50vw;
+    }
+
+    .meal-video {
+        height: 324px !important;
+    }
+
+    .meal-instruction {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 642px){
+    .meals-list {
+        justify-content: center;
+    }
+
+    .meal-item {
+        width: 80%;
+    }
+
+    .detail-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detail-meal {
+        width: 70%;
+        text-align: center;
+    }
+
+    .detail-ingredients {
+        width: 80%;
     }
 }

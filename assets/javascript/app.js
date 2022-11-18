@@ -13,7 +13,7 @@ function renderHtml(data){
         searchHeading.textContent = 'Not results be found, please try again!'
     } else {
         data.forEach(meal => {
-            htmls += `<a href="/page/detail.html?id=${meal.idMeal}" class="meal-item">
+            htmls += `<a href="./page/detail.html?id=${meal.idMeal}" class="meal-item">
                 <img class="meal-img" src="${meal.strMealThumb}" alt="${meal.strMeal}">
                 <div class="meal-overlay">${meal.strMeal}</div>
                 </a>`
